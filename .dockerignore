@@ -1,0 +1,9 @@
+app/node_modules
+.git
+.gitignore
+Dockerfile
+Jenkinsfile
+coverage
+npm-debug.log*
+.env
+.env.*
