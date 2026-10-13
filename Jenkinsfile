@@ -28,6 +28,18 @@ pipeline {
             }
         }
 
+        stage('Security Scan') {
+            steps {
+                echo 'Running Semgrep security scan...'
+                sh '''
+                    /opt/semgrep-venv/bin/semgrep scan \
+                        --config auto \
+                        --severity ERROR \
+                        .
+                '''
+            }
+        }
+
         stage('Docker Build') {
             steps {
                 echo 'Building Docker image...'
